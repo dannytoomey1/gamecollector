@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Developer List</h1>
+
+{% for dev in dev_list %}
+  <a href="{% url 'devs_detail' dev.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ dev.name }}</span>
+            <p>Description: {{ dev.description }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
